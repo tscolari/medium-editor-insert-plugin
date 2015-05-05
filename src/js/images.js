@@ -522,7 +522,7 @@
 
     Images.prototype.deleteFile = function (file) {
         if (this.options.deleteScript) {
-            $.post(this.options.deleteScript, { file: file });
+            $.ajax({url: this.options.deleteScript, type: 'DELETE', data: { file: file }});
         }
     };
 
